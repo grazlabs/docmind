@@ -1,2 +1,2 @@
 export server_env="DEV"
-flask --app docmind run --debug
+./.venv/bin/python3 -m flask --app docmind run --debug

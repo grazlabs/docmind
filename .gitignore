@@ -6,3 +6,6 @@
 
 # llm related ignores
 /llm/__pycache__
+
+# git related ignores
+/.git

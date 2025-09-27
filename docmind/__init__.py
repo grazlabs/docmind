@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+from llm import query_processor
+import pdf_utility
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)

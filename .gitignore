@@ -1,0 +1,8 @@
+# flask app related ignores
+/instance
+/__pycache__
+/docmind/__pycache__
+/.venv
+
+# llm related ignores
+/llm/__pycache__

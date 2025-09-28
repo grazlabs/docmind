@@ -5,15 +5,26 @@
 {%endblock%}
 
 {%block body%}
-<header>
-    <img src="{{url_for('static', filename='logo.png')}}">
-    <p>
-        A simple AI powered app
-        to answer to your queries
-        based on the PDF and text files
-        that you upload.
-    </p>
-    <a href="{{url_for('query_page')}}">Query Page</a>
-</header>
+<div id="main-content">
+    <header class="card-container">
+        <img src="{{url_for('static', filename='logo.png')}}" alt="App Logo">
+        <p class="tagline">
+            Your instant insights assistant for text and PDF files.
+        </p>
+        <a href="{{url_for('query_page')}}" class="primary-button cta-button">Start Analyzing Now</a>
+    </header>
 
+    <section id="about" class="card-container">
+        <h2>About This App</h2>
+        <p>
+            This is a simple, AI-powered application designed to help you quickly
+            extract information and get answers based on the content of your uploaded files.
+        </p>
+        <p>
+            Simply upload one or more <i>PDF</i> or <i>text files</i>, type your question, and our AI model will
+            read and synthesize the information to provide a comprehensive response.
+            It's fast, private, and efficient.
+        </p>
+    </section>
+</div>
 {%endblock%}

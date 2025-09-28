@@ -1,0 +1,53 @@
+/* response_page.css - Specific to Response Page */
+
+/* The h1 banner is styled in base.css, here we style the content wrapper that follows */
+.response-content {
+    /* Uses .card-container from base.css but modifies corners/padding to attach to h1 */
+    background-color: var(--color-card-background);
+    padding: 30px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 10px var(--color-shadow);
+    max-width: 600px;
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* --- Section Headings (Query/Response) --- */
+
+h2 {
+    font-size: 1.2em;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    padding: 0 10px;
+    /*border-left: 5px solid var(--color-primary);*/
+    font-weight: 600;
+}
+
+/* --- Content Styling (Paragraphs) --- */
+
+p {
+    padding: 15px;
+    margin: 0 0 15px 0;
+    border-radius: 4px;
+    font-size: 1em;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+/* Style for the QUERY paragraph */
+h2:nth-of-type(1) + p {
+    background-color: var(--color-input-background);
+    /*border-left: 5px solid var(--color-border-light);*/
+    font-style: italic;
+    color: var(--color-text-medium);
+    margin-bottom: 30px;
+}
+
+/* Style for the RESPONSE paragraph */
+h2:nth-of-type(2) + p {
+    background-color: var(--color-card-background);
+    border: 1px solid var(--color-border-medium);
+    /*border-left: 5px solid var(--color-primary);*/
+    font-weight: normal;
+}

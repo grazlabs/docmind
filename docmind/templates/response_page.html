@@ -1,7 +1,13 @@
 {%extends "base.html"%}
 
+{%block page_head%}
+<link rel="stylesheet" href="{{url_for('static', filename='stylesheets/response_page.css')}}">
+{%endblock%}
+
 {%block body%}
 <h1>Response Page</h1>
-<p>Your query is - "{{query}}"</p>
-<p>Response is - "{{response}}"</p>
+<h2>Query</h2>
+<p>{{query}}</p>
+<h2>Response</h2>
+<p>{{response}}</p>
 {%endblock%}

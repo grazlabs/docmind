@@ -1,5 +1,9 @@
 {%extends "base.html"%}
 
+{%block page_head%}
+<link rel="stylesheet" href="{{url_for('static', filename='stylesheets/query_page.css')}}">
+{%endblock%}
+
 {%block body%}
 <h1>Query Page</h1>
 <form action="{{url_for('response_page')}}" method="post" enctype="multipart/form-data">

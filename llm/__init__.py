@@ -6,4 +6,4 @@ def query_processor(context_data:dict[str,str], prompt:str)->str:
         - The prompt is a string containing the query provided by user.
         - The return value is a string (containing the answer to prompt).
     '''
-    return "Not implemented yet. context_data = " + context_data.__str__()
+    return "NOT IMPLEMENTED YET. context_data = " + context_data.__str__()

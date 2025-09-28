@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request
 from llm import query_processor
 from docmind import pdf_utility
 from werkzeug.utils import secure_filename
@@ -22,23 +22,26 @@ def create_app(test_config=None):
     def response_page():
         form = request.form
         files = request.files
-        fileData = {}
+        file_data = {} # key:file name, value:text content of the file.
 
-        for file in files:
-            file = files[file]
+        # extracting text from files into file_data
+        for name in files:
+            file = files[name]
             filename = secure_filename(file.filename)
             if(filename != ''): # i.e. if file not empty
                 match(file.mimetype):
                     case 'text/plain'|'text/markdown':
-                        fileData[filename] = file.stream.read()
-                    case 'text/pdf':
-                        pass
+                        file_data[filename] = file.stream.read()
+                    case 'application/pdf':
+                        file_data[filename] = pdf_utility.text_from_pdf(file.stream)
                     case '_':
                         return "Unsupported filetype {} submitted.".format(file.mimetype), 400
 
+        # getting the response text
+        response = query_processor(file_data, request.form['query_box'])
         
-        response = query_processor(fileData, request.form['query_box'])
-        
+        # rendering the template and returning the response
+        # if correct form submitted.
         if('query_submission' in form):
             return render_template(
                 "response_page.html", 

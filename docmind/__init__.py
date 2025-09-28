@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from llm import query_processor
 from docmind import pdf_utility
 
@@ -19,6 +19,16 @@ def create_app(test_config=None):
     
     @app.route("/response_page", methods=('POST',))
     def response_page():
-        return render_template("response_page.html"), 200
+        form = request.form
+        response = query_processor(['abc','def'], request.form['query_box'])
+        
+        if('query_submission' in form):
+            return render_template(
+                "response_page.html", 
+                query=form["query_box"],
+                response=response
+            ), 200
+        else:
+            return "Unknown form POSTed to response_page.", 400
     
     return app

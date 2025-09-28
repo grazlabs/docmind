@@ -5,9 +5,12 @@
 {%endblock%}
 
 {%block body%}
-<h1>Response Page</h1>
+<h1>AI Response</h1>
+<div class="card-container response-content">
 <h2>Query</h2>
 <p>{{query}}</p>
 <h2>Response</h2>
 <p>{{response}}</p>
+</div>
+<a href="{{url_for('query_page')}}" class="nav-link">Go to Query Page</a>
 {%endblock%}

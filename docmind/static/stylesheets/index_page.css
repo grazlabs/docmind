@@ -1,3 +1,50 @@
-h1{
-    color: rgb(100, 100, 100);
+/* index_page.css - Specific to Home Page */
+
+body {
+    /* Override base padding/alignment to center vertically on this page only */
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 0;
+}
+
+#main-content {
+    max-width: 530px; /* Smaller width for cleaner aesthetic on home page */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Header and About sections rely on .card-container from base.css */
+header {
+    text-align: center;
+}
+
+header img {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+header .tagline {
+    margin: 0 0 25px 0;
+    font-size: 1.1em;
+    color: var(--color-text);
+}
+
+.cta-button {
+    width: auto; /* Override primary-button's full width for inline look */
+}
+
+#about h2 {
+    font-size: 1.5em;
+    color: var(--color-text);
+    border-bottom: 2px solid var(--color-border-medium);
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 0.95em;
+    color: var(--color-text-medium);
+    margin-bottom: 15px;
 }

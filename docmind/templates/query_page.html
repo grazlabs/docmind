@@ -5,8 +5,8 @@
 {%endblock%}
 
 {%block body%}
-<h1>Query Page</h1>
-<form action="{{url_for('response_page')}}" method="post" enctype="multipart/form-data">
+<h1>Query your documents with AI</h1>
+<form action="{{url_for('response_page')}}" method="post" enctype="multipart/form-data" class="card-container">
     <label for="query_box">Query/Prompt</label>
     <input name="query_box" type="text">
 
@@ -16,8 +16,9 @@
     </div>
     <input type="button" value="Increase Files" onclick="addFiles()">
 
-    <input name="query_submission" type="submit">
+    <input name="query_submission" type="submit" class="primary-button">
 </form>
+<a href="{{url_for('index_page')}}" class="nav-link">Go to Home Page</a>
 <script>
     let no_of_files = 1;
     function addFiles(){

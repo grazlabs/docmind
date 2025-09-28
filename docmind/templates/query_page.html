@@ -5,6 +5,25 @@
 <form action="{{url_for('response_page')}}" method="post">
     <label for="query_box">Query/Prompt</label>
     <input name="query_box" type="text">
+
+    <label>Attach PDF and text files.</label>
+    <div style="background-color: whitesmoke;" id="file_selection_box">
+        <input type="file" name="file_1" accept="application/pdf, .txt, .md">
+    </div>
+    <input type="button" value="Add Files" onclick="addFiles()">
+
     <input name="query_submission" type="submit">
 </form>
+<script>
+    let no_of_files = 1;
+    function addFiles(){
+        no_of_files += 1;
+        new_element = document.createElement('input');
+        new_element.type = "file";
+        new_element.name = `file_${no_of_files}`;
+        new_element.accept = "application/pdf, .txt, .md";
+        document.getElementById("file_selection_box").append(document.createElement('br'));
+        document.getElementById("file_selection_box").append(new_element);
+    }
+</script>
 {%endblock%}

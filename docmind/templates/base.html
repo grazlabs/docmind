@@ -2,11 +2,11 @@
 <html lang="en">
     <head>
         <title>Docmind</title>
-        <link rel="icon" href="/static/favicon.webp" type="image/webp">
+        <link rel="icon" href="{{url_for('static', filename='favicon.webp')}}" type="image/webp">
         <meta charset="utf-8">
         <meta name="description" content="A simple LLM powered web app that answers queries based on text from pdf and text files uploaded by user.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{{url_for('static', filename='/stylesheets/base.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='stylesheets/base.css')}}">
 
         {%block page_head%}{%endblock%}
     </head>
